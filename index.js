@@ -9,7 +9,7 @@ const testServerUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.
 
 function acknowledgeClick() {
   console.log(selectOption.value);
-  if ((textInput.value != "") && (selectOption.value != "testing")) {
+  if (textInput.value != "" && selectOption.value != "testing") {
   var toBeTranslated = serverUrl + selectOption.value + ".json?text=" + textInput.value;
   fetch(toBeTranslated)
     .then(response => response.json())
