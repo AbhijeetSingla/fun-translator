@@ -14,5 +14,10 @@ function acknowledgeClick() {
   fetch(toBeTranslated)
     .then(response => response.json())
     .then(data => textOutput.innerText = data.contents.translated)
+  } else if (selectOption.value === "testing" ) {
+    var toBeTranslated = testServerUrl + "?text=" + textInput.value;
+    fetch(toBeTranslated)
+    .then(response => response.json())
+    .then(data => textOutput.innerText = data.contents.translated)
   }
 }
