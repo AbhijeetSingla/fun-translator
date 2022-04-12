@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minion Translator</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="shortcut icon" href="/email.svg" type="image/x-icon" />
+  </head>
+  <body id="bodyy">
+    <header>
+    <h1>Speak like your favorite characters</h1>
+  </header>
+    <div class="briefing">
+      <p>
+        This translator uses an API to translate english to language used by the
+        charachters in the movies like minions.
+      </p>
+      <small>Check it out!</small>
+    </div>
+
+    <div id="translate-text-holder-div">
+      <textarea
+        placeholder="English here"
+        name="to be translated text"
+        id="translate-text-holder"
+        cols="30"
+        rows="10" 
+      ></textarea>
+    </div>
+    <div id="translate-input-form">
+      <label for="Choose Language">I want to speak in:</label>
+      <select name="Choose Language" id="language-selector">
+        <optgroup label="Characters">
+          <option value="pirate">Pirates</option>
+          <option value="minion">Minions</option>
+          <option value="ferblatin">Ferb latin</option>
+          <option value="chef">Chef</option>
+          <option value="dolan">Dolan</option>
+          <option value="fudd">Fudd</option>
+        </optgroup>
+        <optgroup label="Starwars">
+          <option value="yoda">Yoda</option>
+          <option value="mandalorian">Mandalorian</option>
+        </optgroup>
+      </select>
+      <button type="submit" id="translate-button">Translate</button>
+    </div>
+
+    <div id="text-output-holder"></div>
+    <script src="/index.js"></script>
+  </body>
+</html>

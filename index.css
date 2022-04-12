@@ -1,0 +1,49 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+small {
+  display: block;
+  margin-block-end: 1rem;
+}
+
+header {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.briefing {
+  width: 80vw;
+  text-align: center;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-end: 2rem;
+}
+
+#translate-input-form {
+  text-align: center;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+#translate-text-holder-div {
+  width: 80vw;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+#translate-text-holder {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+#text-output-holder {
+  border: 2px solid #000;
+  height: 160px;
+  width: 80vw;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  font-family: monospace;
+  display: grid;
+  place-content: center;
+}
