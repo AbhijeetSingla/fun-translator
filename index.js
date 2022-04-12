@@ -20,4 +20,7 @@ function acknowledgeClick() {
     .then(response => response.json())
     .then(data => textOutput.innerText = data.contents.translated)
   }
+  else {
+    textOutput.innerText = "Error: Text is missing!"
+  }
 }
