@@ -12,7 +12,7 @@
   <body>
     <div>
       <header>
-      <h1>Speak like your favorite characters</h1>
+      <div>speak like your favorite characters</div>
       </header>
       
       <div class="briefing container-center section-base">
@@ -32,7 +32,7 @@
           rows="10" 
         ></textarea>
       </div>
-      <div id="translate-input-form">
+      <div id="translate-input-form" class="flex">
         <label for="Choose Language">I want to speak in:</label>
         <select name="Choose Language" id="language-selector">
           <optgroup label="Characters">
@@ -51,7 +51,7 @@
             <option value="testing">Tanay's Test Server</option>
           </optgroup>
         </select>
-        <button type="submit" id="translate-button">Translate</button>
+        <button type="submit" id="translate-button" class="primary-button">Translate</button>
       </div>
       <div id="text-output-holder"></div>
       <script src="/index.js"></script>
