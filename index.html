@@ -6,52 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minion Translator</title>
     <link rel="stylesheet" href="/index.css" />
-    <link rel="shortcut icon" href="/email.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/email.svg" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://as1553-component-library.netlify.app/css/color-scheme.css">
   </head>
-  <body id="bodyy">
-    <header>
-    <h1>Speak like your favorite characters</h1>
-  </header>
-    <div class="briefing">
-      <p>
-        This translator uses an API to translate english to language used by the
-        charachters in the movies like minions.
-      </p>
-      <small>Check it out!</small>
+  <body>
+    <div>
+      <header>
+      <h1>Speak like your favorite characters</h1>
+      </header>
+      
+      <div class="briefing container-center section-base">
+        <p>
+          This translator uses an API to translate english to language used by the
+          charachters in the movies like minions.
+        </p>
+        <small>Check it out!</small>
+      </div>
+      <div class="container-center section-offwhite">
+      <div id="translate-text-holder-div">
+        <textarea
+          placeholder="English here"
+          name="to be translated text"
+          id="translate-text-holder"
+          cols="30"
+          rows="10" 
+        ></textarea>
+      </div>
+      <div id="translate-input-form">
+        <label for="Choose Language">I want to speak in:</label>
+        <select name="Choose Language" id="language-selector">
+          <optgroup label="Characters">
+            <option value="pirate">Pirates</option>
+            <option value="minion">Minions</option>
+            <option value="ferblatin">Ferb latin</option>
+            <option value="chef">Chef</option>
+            <option value="dolan">Dolan</option>
+            <option value="fudd">Fudd</option>
+          </optgroup>
+          <optgroup label="Starwars">
+            <option value="yoda">Yoda</option>
+            <option value="mandalorian">Mandalorian</option>
+          </optgroup>
+          <optgroup label="Testing">
+            <option value="testing">Tanay's Test Server</option>
+          </optgroup>
+        </select>
+        <button type="submit" id="translate-button">Translate</button>
+      </div>
+      <div id="text-output-holder"></div>
+      <script src="/index.js"></script>
+    </div>
     </div>
 
-    <div id="translate-text-holder-div">
-      <textarea
-        placeholder="English here"
-        name="to be translated text"
-        id="translate-text-holder"
-        cols="30"
-        rows="10" 
-      ></textarea>
-    </div>
-    <div id="translate-input-form">
-      <label for="Choose Language">I want to speak in:</label>
-      <select name="Choose Language" id="language-selector">
-        <optgroup label="Characters">
-          <option value="pirate">Pirates</option>
-          <option value="minion">Minions</option>
-          <option value="ferblatin">Ferb latin</option>
-          <option value="chef">Chef</option>
-          <option value="dolan">Dolan</option>
-          <option value="fudd">Fudd</option>
-        </optgroup>
-        <optgroup label="Starwars">
-          <option value="yoda">Yoda</option>
-          <option value="mandalorian">Mandalorian</option>
-        </optgroup>
-        <optgroup label="Testing">
-          <option value="testing">Tanay's Test Server</option>
-        </optgroup>
-      </select>
-      <button type="submit" id="translate-button">Translate</button>
-    </div>
-
-    <div id="text-output-holder"></div>
-    <script src="/index.js"></script>
+    <footer class="footer-base flex">
+      <div class="footer-heading">Social Links</div>
+      <ul class="footer-social-links list-style-none flex">
+          <li><a href="https://linkedin.com/in/abhijeetsingla1553" target="_blank"><img
+                      src="https://as1553-component-library.netlify.app/media/icons/linkedin.svg" alt="linkedin" width="25px" height="25px"></a></li>
+          <li><a href="https://github.com/AbhijeetSingla" target="_blank"><img src="https://as1553-component-library.netlify.app/media/icons/github.svg"
+                      alt="github" width="25px" height="25px"></a></li>
+          <li><a href="mailto:abhijeetsingla1553@gmail.com"><img src="https://as1553-component-library.netlify.app/media/icons/email.svg" alt="email" width="25px"
+                      height="25px"></a></li>
+      </ul>
+      <p>No Copyright &#169 2022. Made by Abhijeet Singla</p>
+  </footer>
   </body>
 </html>
