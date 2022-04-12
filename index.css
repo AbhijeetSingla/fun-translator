@@ -1,47 +1,49 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-small {
-  display: block;
-  margin-block-end: 1rem;
-}
-
 header {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: var(--primary-base);
+  padding-block-start: 2rem;
+  padding-inline-start: 2rem;
+  padding-inline-end: 2rem;
+  padding-block-end: 2rem;
+  text-transform: capitalize;
 }
 
 .briefing {
-  width: 80vw;
   text-align: center;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  margin-block-end: 2rem;
 }
 
 #translate-input-form {
-  text-align: center;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
-}
-
-#translate-text-holder-div {
-  width: 80vw;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  justify-content: center;
+  align-items: center;
+  --gap: 1rem;
 }
 
 #translate-text-holder {
   width: 100%;
-  border: 2px solid #000;
+  border: 2px solid var(--secondary-base);
   resize: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#language-selector {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-inline-start: 1rem;
+  padding-block-start: 0.9rem;
+  padding-block-end: 0.9rem;
+  /* margin-inline-start: 1rem;
+  margin-inline-end: 1rem; */
 }
 
 #text-output-holder {
-  border: 2px solid #000;
+  border: 2px solid var(--secondary-base);
+  background-color: var(--bg-color);
   height: 160px;
-  width: 80vw;
   margin-inline-start: auto;
   margin-inline-end: auto;
   font-family: monospace;
