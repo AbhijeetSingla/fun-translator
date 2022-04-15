@@ -1,13 +1,20 @@
+button#theme-toggle-button {
+  position: absolute;
+}
+
 header {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
   background-color: var(--primary-base);
+  color: var(--text-color);
   padding-block-start: 2rem;
   padding-inline-start: 2rem;
   padding-inline-end: 2rem;
   padding-block-end: 2rem;
   text-transform: capitalize;
+}
+
+header > h1 {
+  margin-block-start: 0;
+  font-size: 3rem;
 }
 
 .briefing {
@@ -27,17 +34,15 @@ header {
   border: 2px solid var(--secondary-base);
   resize: none;
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--blog-card-text-color);
 }
 
 #language-selector {
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--blog-card-text-color);
   padding-inline-start: 1rem;
   padding-block-start: 0.9rem;
   padding-block-end: 0.9rem;
-  /* margin-inline-start: 1rem;
-  margin-inline-end: 1rem; */
 }
 
 #text-output-holder {
