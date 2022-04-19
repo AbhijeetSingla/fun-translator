@@ -8,6 +8,18 @@ let insultUrl = "";
 let testServerUrl = "";
 let fallbackInsultUrl = "";
 
+function setAttributes(element, attributes) {
+  for(var key in attributes) {
+    element.setAttribute(key, attributes[key]);
+  }
+}
+
+function removeAttributes (element, attributes) {
+  for (var key of attributes) {
+    element.removeAttribute(key);
+  }
+}
+
 function acknowledgeClick() {
   switch (selectOption.value) {
     case "testing":
@@ -46,23 +58,23 @@ function acknowledgeClick() {
 function insultcheck() {
   if (selectOption.value === "insultplease") {
     textInput.innerText = "";
-    document.querySelector("#insult-language-select-form").setAttribute("style", "display: block;");
-    textInput.setAttribute("style", "display: none;")
+    setAttributes(document.querySelector("#insult-language-select-form"), {"style": "display: block;","aria-hidden": "false"});
+    setAttributes(textInput, {"style": "display: none;","aria-hidden": "true"});
     document.querySelector("#character-selector-label").innerText = "I want to :";
-    document.querySelector("#fallbackwarning").setAttribute("style", "display: block;");
-    document.querySelector("#translatorbriefing").setAttribute("style", "display: none;");
+    setAttributes(document.querySelector("#fallbackwarning"), {"style": "display: block;","aria-hidden": "false"});
+    setAttributes(document.querySelector("#translatorbriefing"), {"style": "display: none;","aria-hidden": "true"});
     translateButton.innerText = "Generate Insult"
   } else {
-    document.querySelector("#insult-language-select-form").setAttribute("style", "display: none;");
-    textInput.removeAttribute("style");
+    setAttributes(document.querySelector("#insult-language-select-form"), {"style": "display: none;","aria-hidden": "true"});
+    removeAttributes(textInput, ["style", "aria-hidden"]);
     document.querySelector("#fallbackalert").innerText = "in";
-    document.querySelector("#fallbackwarning").setAttribute("style", "display: none;");
-    document.querySelector("#translatorbriefing").setAttribute("style", "display: block;");
+    setAttributes(document.querySelector("#fallbackwarning"), {"style": "display: none;","aria-hidden": "true"});
+    setAttributes(document.querySelector("#translatorbriefing"), {"style": "display: block;","aria-hidden": "false"});
   }
 }
 
 function insultFallbackMesaures () {
-  document.querySelector("#insultlanguage").setAttribute("style", "display: none;");
-  document.querySelector("#insult-language-select-form").setAttribute("style", "display: block;");
-  document.querySelector("#fallbackalert").innerText = "Sorry! Main insult server is down, falling back to redundant insult server";
+  setAttributes(document.querySelector("#insultlanguage"), {"style": "display: none;","aria-hidden": "true"});
+  setAttributes(document.querySelector("#insult-language-select-form"), {"style": "display: block;","aria-hidden": "false"});
+  document.querySelector("#fallbackalert").innerText = "Sorry! Main server is down, falling back to redundant server";
 }
