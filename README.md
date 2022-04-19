@@ -4,6 +4,10 @@ This translator uses an api named [funtranslations](https://api.funtranslations.
 
 You can select which translation is required from the drop drown menu and after typing the content to be translated press the translate button.
 
+***or***
+
+You can generate insults (please use this feature at your own risk 😜) using the API named [Evil Insult Generator](https://evilinsult.com/api/) and [Insult API](https://insult.mattbas.org/api/).
+
 # Preview
 A live preview can be seen at 
 
