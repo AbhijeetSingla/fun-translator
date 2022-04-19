@@ -6,6 +6,7 @@ let insultLanguage = document.querySelector("#insultlanguage");
 let translateServerUrl = "";
 let insultUrl = "";
 let testServerUrl = "";
+let fallbackInsultUrl = "";
 
 function acknowledgeClick() {
   switch (selectOption.value) {
