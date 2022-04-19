@@ -3,9 +3,9 @@ var textInput = document.querySelector("#translate-text-holder");
 var textOutput = document.querySelector("#text-output-holder");
 let selectOption = document.getElementById("character-selector");
 let insultLanguage = document.querySelector("#insultlanguage");
-let translateServerUrl;
-let insultUrl;
-let testServerUrl;
+let translateServerUrl = "";
+let insultUrl = "";
+let testServerUrl = "";
 
 function acknowledgeClick() {
   switch (selectOption.value) {
@@ -17,10 +17,10 @@ function acknowledgeClick() {
       .catch(error => console.error(`Error:${error}`))
       break;
     case "insultplease":
-      insultUrl = `https://evilinsult.com/generate_insult.php?lang=${insultLanguage.value}&type=text`;
+      insultUrl = `https://evilinsult.com/generate_insult.php?lang=${insultLanguage.value}&type=plain`;
       fallbackInsultUrl = `https://insult.mattbas.org/api/en/insult.txt`;
       fetch(insultUrl)
-      .then(response => response.json())
+      .then(response => {console.log(response); return response.text()})
       .then(data => {console.log(data); textOutput.innerText = data})
       .catch(() => {
         insultFallbackMesaures(); 
