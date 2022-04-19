@@ -17,11 +17,17 @@ function acknowledgeClick() {
       .catch(error => console.error(`Error:${error}`))
       break;
     case "insultplease":
-      insultUrl = `https://evilinsult.com/generate_insult.php?lang=${insultLanguage.value}&type=json`;
+      insultUrl = `https://evilinsult.com/generate_insult.php?lang=${insultLanguage.value}&type=text`;
+      fallbackInsultUrl = `https://insult.mattbas.org/api/en/insult.txt`;
       fetch(insultUrl)
       .then(response => response.json())
-      .then(data => textOutput.innerText = data.contents.insult)
-      .catch(error => textOutput.innerText = `${error} (╯°□°)╯︵ ┻━┻`)
+      .then(data => {console.log(data); textOutput.innerText = data})
+      .catch(() => {
+        insultFallbackMesaures(); 
+        fetch(fallbackInsultUrl).then(response => response.text())
+        .then(data => textOutput.innerText = data)
+        .catch(error => textOutput.innerText = `${error} (╯°□°)╯︵ ┻━┻`)
+      })
       break;
     default:
       let translateValidate = textInput.value.replace(/\s/g,'');
@@ -42,6 +48,20 @@ function insultcheck() {
     document.querySelector("#insult-language-select-form").setAttribute("style", "display: block;");
     textInput.setAttribute("style", "display: none;")
     document.querySelector("#character-selector-label").innerText = "I want to :";
+    document.querySelector("#fallbackwarning").setAttribute("style", "display: block;");
+    document.querySelector("#translatorbriefing").setAttribute("style", "display: none;");
     translateButton.innerText = "Generate Insult"
+  } else {
+    document.querySelector("#insult-language-select-form").setAttribute("style", "display: none;");
+    textInput.removeAttribute("style");
+    document.querySelector("#fallbackalert").innerText = "in";
+    document.querySelector("#fallbackwarning").setAttribute("style", "display: none;");
+    document.querySelector("#translatorbriefing").setAttribute("style", "display: block;");
   }
+}
+
+function insultFallbackMesaures () {
+  document.querySelector("#insultlanguage").setAttribute("style", "display: none;");
+  document.querySelector("#insult-language-select-form").setAttribute("style", "display: block;");
+  document.querySelector("#fallbackalert").innerText = "Sorry! Main insult server is down, falling back to redundant insult server";
 }
