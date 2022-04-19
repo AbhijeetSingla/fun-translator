@@ -7,8 +7,8 @@
     <title>Character Speak Translator</title>
     <link rel="shortcut icon" href="/media/icons/translate.svg" type="image/x-icon"/>    
     <link rel="stylesheet" href="/index.css" />
-    <link rel="stylesheet" href="https://as1553-component-library.netlify.app/css/color-scheme.css">
-    <link id="mode-select" rel="stylesheet" href="https://as1553-component-library.netlify.app">
+    <link rel="stylesheet" type="text/css" href="https://as1553-component-library.netlify.app/css/color-scheme.css">
+    <link id="mode-select" type="text/css" rel="stylesheet" href="https://as1553-component-library.netlify.app">
   </head>
   <body>
     <button id="theme-toggle-button"></button>
@@ -18,12 +18,17 @@
       <h1>speak like your favorite characters</h1>
       </header>
       
-      <div class="briefing container-center section-base">
+      <div class="briefing container-center section-base" id="translatorbriefing">
         <p>
           This translator uses an API to translate english to language used by the
           charachters in the movies like minions.
         </p>
         <small>Check it out!</small>
+      </div>
+      <div id="fallbackwarning" class="briefing container-center section-base" style="display: none;">
+        <img src="/media/icons/danger.svg" alt="Danger!" width="100px">
+        <p>Please use this feature carefully, insulting your friends or family can cause harm to you in form of either bullying or broken bones...</p>
+        <small>Anyhow...</small>
       </div>
       <div class="container-center section-offwhite">
       <div id="translate-text-holder-div">
@@ -36,8 +41,8 @@
         ></textarea>
       </div>
       <div id="translate-input-form" class="flex">
-        <label for="Choose Language">I want to speak in:</label>
-        <select name="Choose Language" id="language-selector">
+        <label for="choose character" id="character-selector-label">I want to speak in :</label>
+        <select name="choose character" id="character-selector" class="input-select" onchange="insultcheck()">
           <optgroup label="Characters">
             <option value="pirate">Pirates</option>
             <option value="minion">Minions</option>
@@ -50,11 +55,25 @@
             <option value="yoda">Yoda</option>
             <option value="mandalorian">Mandalorian</option>
           </optgroup>
+          <optgroup label="Misc.">
+              <option value="insultplease">Roast Somebody 😈</option>
+          </optgroup>
           <optgroup label="Testing">
             <option value="testing">Tanay's Test Server</option>
           </optgroup>
         </select>
-        <button type="submit" id="translate-button" class="primary-button">Translate</button>
+        <div id="insult-language-select-form" style="display: none">
+          <label for="insult language select" id="fallbackalert">in</label>
+          <select name="insult language select" id="insultlanguage" class="input-select">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="el">Greek</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="sw">Swahili</option>
+          </select>
+        </div>
+        <button type="submit" id="translate-button" class="primary-button" onclick="acknowledgeClick()">Translate</button>
       </div>
       <div id="text-output-holder"></div>
       <script src="/index.js"></script>
